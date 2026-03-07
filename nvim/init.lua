@@ -8,27 +8,27 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Core editor options
-vim.opt.number = true
-vim.opt.relativenumber = false
-vim.opt.cursorline = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.wrap = false
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.termguicolors = true
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 250
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamedplus"
+vim.opt.number = true               -- Show line numbers.
+vim.opt.relativenumber = false      -- Relative line numbers.
+vim.opt.cursorline = true           -- Highlight line.
+vim.opt.tabstop = 2                 -- Tab width.
+vim.opt.shiftwidth = 2              -- Indent width.
+vim.opt.expandtab = true            -- Tabs to spaces.
+vim.opt.smartindent = true          -- Smart indent.
+vim.opt.wrap = false                -- Line wrap.
+vim.opt.ignorecase = true           -- Ignore case.
+vim.opt.smartcase = true            -- Uppercase = case-sensitive.
+vim.opt.hlsearch = false            -- No persistent highlights.
+vim.opt.incsearch = true            -- Search as you type.
+vim.opt.termguicolors = true        -- True color.
+vim.opt.scrolloff = 8               -- Vertical context.
+vim.opt.sidescrolloff = 8           -- Horizontal context.
+vim.opt.signcolumn = "yes"          -- Always show signs.
+vim.opt.updatetime = 250            -- Faster updates.
+vim.opt.splitright = true           -- Vsplit right.
+vim.opt.splitbelow = true           -- Split below.
+vim.opt.mouse = "a"                 -- Mouse enabled.
+vim.opt.clipboard = "unnamedplus"   -- System clipboard.
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
