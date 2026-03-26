@@ -8,27 +8,27 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Core editor options
-vim.opt.number = true               -- Show line numbers.
-vim.opt.relativenumber = false      -- Relative line numbers.
-vim.opt.cursorline = true           -- Highlight line.
-vim.opt.tabstop = 2                 -- Tab width.
-vim.opt.shiftwidth = 2              -- Indent width.
-vim.opt.expandtab = true            -- Tabs to spaces.
-vim.opt.smartindent = true          -- Smart indent.
-vim.opt.wrap = false                -- Line wrap.
-vim.opt.ignorecase = true           -- Ignore case.
-vim.opt.smartcase = true            -- Uppercase = case-sensitive.
-vim.opt.hlsearch = false            -- No persistent highlights.
-vim.opt.incsearch = true            -- Search as you type.
-vim.opt.termguicolors = true        -- True color.
-vim.opt.scrolloff = 8               -- Vertical context.
-vim.opt.sidescrolloff = 8           -- Horizontal context.
-vim.opt.signcolumn = "yes"          -- Always show signs.
-vim.opt.updatetime = 250            -- Faster updates.
-vim.opt.splitright = true           -- Vsplit right.
-vim.opt.splitbelow = true           -- Split below.
-vim.opt.mouse = "a"                 -- Mouse enabled.
-vim.opt.clipboard = "unnamedplus"   -- System clipboard.
+vim.opt.number = true -- Show line numbers.
+vim.opt.relativenumber = false -- Relative line numbers.
+vim.opt.cursorline = true -- Highlight line.
+vim.opt.tabstop = 2 -- Tab width.
+vim.opt.shiftwidth = 2 -- Indent width.
+vim.opt.expandtab = true -- Tabs to spaces.
+vim.opt.smartindent = true -- Smart indent.
+vim.opt.wrap = false -- Line wrap.
+vim.opt.ignorecase = true -- Ignore case.
+vim.opt.smartcase = true -- Uppercase = case-sensitive.
+vim.opt.hlsearch = false -- No persistent highlights.
+vim.opt.incsearch = true -- Search as you type.
+vim.opt.termguicolors = true -- True color.
+vim.opt.scrolloff = 8 -- Vertical context.
+vim.opt.sidescrolloff = 8 -- Horizontal context.
+vim.opt.signcolumn = "yes" -- Always show signs.
+vim.opt.updatetime = 250 -- Faster updates.
+vim.opt.splitright = true -- Vsplit right.
+vim.opt.splitbelow = true -- Split below.
+vim.opt.mouse = "a" -- Mouse enabled.
+vim.opt.clipboard = "unnamedplus" -- System clipboard.
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -177,8 +177,6 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      local lspconfig = require("lspconfig")
-      local util = require("lspconfig.util")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       require("mason-lspconfig").setup({
@@ -219,13 +217,14 @@ require("lazy").setup({
       }
 
       for _, server_name in ipairs(servers) do
-        lspconfig[server_name].setup({
+        vim.lsp.config(server_name, {
           capabilities = capabilities,
           on_attach = on_attach,
         })
+        vim.lsp.enable(server_name)
       end
 
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = {
@@ -239,13 +238,15 @@ require("lazy").setup({
           },
         },
       })
+      vim.lsp.enable("lua_ls")
 
-      lspconfig.jdtls.setup({
+      vim.lsp.config("jdtls", {
         capabilities = capabilities,
         on_attach = on_attach,
-        root_dir = util.root_pattern(".git", "mvnw", "gradlew", "pom.xml", "build.gradle"),
+        root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }),
         single_file_support = false,
       })
+      vim.lsp.enable("jdtls")
     end,
   },
 
