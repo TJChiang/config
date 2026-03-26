@@ -45,6 +45,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- VS Code-like color scheme.
   {
     "Mofiqul/vscode.nvim",
     priority = 1000,
@@ -57,6 +58,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Keybinding hint popup.
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -65,6 +67,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Better UI for messages, cmdline, and LSP popups.
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -87,6 +90,7 @@ require("lazy").setup({
     end,
   },
 
+  -- File explorer sidebar.
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -109,6 +113,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Fuzzy finder for files, text, and buffers.
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
@@ -136,6 +141,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Syntax highlighting and smarter code parsing.
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -162,6 +168,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Installer for LSP servers and developer tools.
   {
     "williamboman/mason.nvim",
     config = function()
@@ -169,6 +176,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Bridges Mason with Neovim LSP setup.
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = {
@@ -250,6 +258,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Diagnostics and references list panel.
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -258,6 +267,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Autocompletion engine with snippets and sources.
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -317,6 +327,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Floating or split terminal management.
   {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -334,6 +345,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Buffer tabs shown like an editor tab bar.
   {
     "akinsho/bufferline.nvim",
     version = "*",
@@ -350,6 +362,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Statusline with mode and file info.
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -364,6 +377,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Git change indicators in the sign column.
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -371,6 +385,7 @@ require("lazy").setup({
     end,
   },
 
+  -- Easy line and block commenting.
   {
     "numToStr/Comment.nvim",
     config = function()
