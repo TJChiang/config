@@ -2,8 +2,8 @@
 vim.opt.number = true -- Show line numbers.
 vim.opt.relativenumber = false -- Relative line numbers.
 vim.opt.cursorline = true -- Highlight line.
-vim.opt.tabstop = 2 -- Tab width.
-vim.opt.shiftwidth = 2 -- Indent width.
+vim.opt.tabstop = 4 -- Tab width.
+vim.opt.shiftwidth = 4 -- Indent width.
 vim.opt.expandtab = true -- Tabs to spaces.
 vim.opt.smartindent = true -- Smart indent.
 vim.opt.wrap = false -- Line wrap.
@@ -20,3 +20,13 @@ vim.opt.splitright = true -- Vsplit right.
 vim.opt.splitbelow = true -- Split below.
 vim.opt.mouse = "a" -- Mouse enabled.
 vim.opt.clipboard = "unnamedplus" -- System clipboard.
+
+vim.opt.list = true -- Show whitespace characters.
+vim.opt.listchars = {
+  tab = ">-",
+  trail = "~",
+  nbsp = "+",
+  space = ".",
+}
+vim.api.nvim_set_hl(0, "Whitespace", { fg = "#8b949e" })
+vim.api.nvim_set_hl(0, "SpecialKey", { fg = "#8b949e" })
