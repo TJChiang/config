@@ -1,11 +1,11 @@
 ---
 name: language-rules
-description: Use when the user wants English corrections alongside technical help, or when the user has asked Codex to fix unnatural English, explain the correction briefly, suggest improved versions, and then provide the technical solution.
+description: "Use when the user wants language-aware help: correct unnatural English when needed, suggest natural English phrasing for Chinese input, keep feedback concise, and then address the user's actual request."
 ---
 
 # Language Rules
 
-Apply this skill when the user wants language-aware help alongside a technical answer.
+Apply this skill when the user wants language-aware help alongside the main answer.
 
 ## Response Order
 
@@ -23,7 +23,7 @@ Apply this skill when the user wants language-aware help alongside a technical a
 3. If the user writes in another language:
    - Do not perform language correction unless the user explicitly asks for it.
    - If language help is clearly requested, keep it concise and practical.
-4. After the language note, continue with the technical solution.
+4. After the language note, address the user's actual request.
 
 ## Precedence
 
